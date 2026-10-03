@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>BÁO CÁO CẤP BỘT NGỌT CHO MÁY ĐÓNG GÓI</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
+        <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+
+        <link rel="stylesheet" href="../common/common.css">
+        <link rel="icon" href="../images/logo.png">
+
+        <link rel="stylesheet" href="H8-FI001.css">
+
+    </head>
+
+    <body>
+        <form id="submit-form">
+            <div class="container">
+                <div class="page" id="page-1">
+                    <div id="table-1-2-3-container">
+                        <div id="table-1-2-container">
+                            <table id="bang-1" class="table">
+                                <tr><td><b>CÔNG TY AJINOMOTO VIỆT NAM</b></td></tr>
+                                <tr><td>Phòng sản xuất bột ngọt</td></tr>
+                                <tr><td>Bộ phận đóng gói</td></tr>
+                            </table>
+
+                            <table id="bang-2" data-json="bang-2" class="table">
+                                <tr><th colspan="4" style="font-size: 12px; height:15px">BÁO CÁO CẤP BỘT NGỌT CHO MÁY ĐÓNG GÓI</th></tr>
+                                <tr>
+                                    <td>Ngày cấp:</td>
+                                    <td colspan="3"><input type="text" data-field="ngay-cap" class="color-2-1" required id="ngay-cap" disabled></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Ca:</td>
+                                    <td colspan="3"><input type="text" class="color-2-2" id="ca" disabled data-field="ca" required></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div id="image-1-2" data-json="review-img" id="review-img">
+                            <div>
+                                <span>Hình 1</span><br>
+                                <img class="review-img" name="review-img-1">
+                                <input class="review-file" type="file" accept="image/*" hidden>
+                            </div>
+
+                            <div>
+                                <span>Hình 2</span><br>
+                                <img class="review-img" name="review-img-2">
+                                <input class="review-file" type="file" accept="image/*"  hidden>
+                            </div>
+                            
+                            <div>
+                                <span>Hình 3</span><br>
+                                <img class="review-img" name="review-img-3">
+                                <input class="review-file" type="file" accept="image/*" hidden>
+                            </div>
+
+                            <div>
+                                <span>Hình 4</span><br>
+                                <img class="review-img" name="review-img-4">
+                                <input class="review-file" type="file" accept="image/*" hidden>
+                            </div>
+                
+                        </div>
+
+                        <table id="bang-3" data-json="bang-3" class="table">
+                            <tr><td colspan="12"><b>Nhân viên cấp bột ngọt</b></td></tr>
+                            <tr>
+                                <td colspan="1" rowspan="2">Ca 1</td>
+                                <td colspan="3" style="background: rgb(243, 215, 163);">
+                                    <img class="sign-img" name="anh-chu-ky-nhan-vien-ca-1">
+                                    <input type="hidden" data-field="anh-chu-ky-nhan-vien-ca-1">
+                                </td>
+
+                                <td colspan="1" rowspan="2">Ca 2</td>
+                                <td colspan="3" style="background: rgb(243, 215, 163);">
+                                    <img class="sign-img" name="anh-chu-ky-nhan-vien-ca-2">
+                                    <input type="hidden" data-field="anh-chu-ky-nhan-vien-ca-2">
+                                </td>
+
+                                <td colspan="1" rowspan="2">Ca 3</td>
+                                <td colspan="3" style="background: rgb(243, 215, 163);">
+                                    <img class="sign-img" name="anh-chu-ky-nhan-vien-ca-3">
+                                    <input type="hidden" data-field="anh-chu-ky-nhan-vien-ca-3">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3"><input type="text" data-field="ten-nhan-vien-ca-1"></td>
+                                <td colspan="3"><input type="text" data-field="ten-nhan-vien-ca-2" disabled></td>
+                                <td colspan="3"><input type="text" data-field="ten-nhan-vien-ca-3" disabled></td>
+                            </tr>
+                
+                        </table>
+                    </div>
+
+                    <table id="bang-4" data-json="bang-4" class="table">
+                        <thead id="bang-4-head"></thead>
+                        <tbody id="bang-4-body"></tbody>
+                        <tfoot id="bang-4-foot"></tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div id="function-div">
+                <button type="submit" class="draft-btn" id="draft-btn">Lưu tạm dữ liệu</button>
+                <div class="btn-div">
+                    <button type="button" class="pdf-btn" id="pdf-btn" name="landscape">Xuất PDF</button>
+                    <button type="button" class="excel-btn" id="excel-btn">Xuất Excel</button>
+                    <button type="submit" class="send-btn" id="send-btn" name="SEND">Gửi dữ liệu</button>
+                </div>
+                <p id="error-message"></p>
+            </div>
+
+            <div id="signature-box">
+                <div id="signature-content">
+                    <h><b>Ký tên</b></h>
+                    <canvas id="signature-canvas"></canvas>
+                    <div id="signature-btn">
+                        <button type="button" id="cancel-sign-btn">HỦY</button>
+                        <button type="button" id="delete-sign-btn">XÓA</button>
+                        <button type="button" id="confirm-sign-btn">XÁC NHẬN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading-div">
+                <div id="loading-icon">
+                    <div id="spinner"></div>
+                    <img src="../logo.png">
+                </div>
+                <span id="loading-message">Đang xử lý...</span>
+            </div>
+
+        </form>
+
+        <script type="module" src="H8-FI001.js"></script>
+        <script src="../common/common_function.js"></script>
+        <script src="../common/common_display.js"></script>
+        
+    </body>
+</html>

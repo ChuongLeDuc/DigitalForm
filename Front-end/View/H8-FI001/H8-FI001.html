@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>BÁO CÁO CẤP BỘT NGỌT CHO MÁY ĐÓNG GÓI</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/3.0.1/jspdf.umd.min.js"></script>
+        <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
+
+        <link rel="stylesheet" href="../common/common.css">
+        <link rel="icon" href="../logo.png">
+        <link rel="stylesheet" href="../H8-FI001/H8-FI001.css">
+
+    </head>
+
+    <body>
+        <form id="submit-form">
+            <div class="container">
+                        <div id="header">
+            <div id="header-left">
+                <img src="../logo.png">
+                <span><b>H8 DIGITAL FORM</b></span>
+            </div>
+            <div id="header-center">
+                <span id="header-formcode"></span>
+                <span id="form-status"></span>
+            </div>
+            <div id="header-right">
+                <span id="username">LÊ ĐỨC CHƯƠNG</span>
+                <div style="display: flex; flex-direction:row; gap:5px">
+                    <button id="changing-password-btn">ĐỔI MẬT KHẨU</button>
+                    <button id="logout-btn">ĐĂNG XUẤT</button>
+                </div>
+                
+            </div>
+        </div>
+                <div class="page" id="page-1">
+                    <div id="table-1-2-3-container">
+                        <div id="table-1-2-container">
+                            <table id="bang-1" class="table">
+                                <tr><td><b>CÔNG TY AJINOMOTO VIỆT NAM</b></td></tr>
+                                <tr><td>Phòng sản xuất bột ngọt</td></tr>
+                                <tr><td>Bộ phận đóng gói</td></tr>
+                            </table>
+
+                            <table id="bang-2" data-json="bang-2" class="table" data-send="true">
+                                <tr><th colspan="4" style="font-size: 12px; height:15px">BÁO CÁO CẤP BỘT NGỌT CHO MÁY ĐÓNG GÓI</th></tr>
+                                <tr>
+                                    <td>Ngày cấp:</td>
+                                    <td colspan="3"><input type="text" data-field="ngay-cap" data-rowid="body-001" class="color-2-1" required id="recorded-date" disabled></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Ca:</td>
+                                    <td colspan="3"><input type="text" class="color-2-2" id="shift" disabled data-field="ca" data-rowid="body-002" required></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div data-json="review-img" id="image-review" data-send="true">
+                            <div>
+                                <span>Hình 1</span><br>
+                                <img class="review-img" name="review-img-1">
+                                <input class="review-file" type="file" accept="image/*" hidden>
+                                <input type="text" data-field="review-img-1" data-rowid="body-001" hidden>
+                            </div>
+
+                            <div>
+                                <span>Hình 2</span><br>
+                                <img class="review-img" name="review-img-2">
+                                <input class="review-file" type="file" accept="image/*"  hidden>
+                                <input type="text" data-field="review-img-2" data-rowid="body-002" hidden>
+                            </div>
+                            
+                            <div>
+                                <span>Hình 3</span><br>
+                                <img class="review-img" name="review-img-3">
+                                <input class="review-file" type="file" accept="image/*" hidden>
+                                <input type="text" data-field="review-img-3" data-rowid="body-003" hidden>
+                            </div>
+
+                            <div>
+                                <span>Hình 4</span><br>
+                                <img class="review-img" name="review-img-4">
+                                <input class="review-file" type="file" accept="image/*" hidden>
+                                <input type="text" data-field="review-img-4" data-rowid="body-004" hidden>
+                            </div>
+                
+                        </div>
+
+                        <table id="image-signature" data-json="image-signature" data-send="true">
+                            <td><input type="hidden" data-field="anh-chu-ky-van-hanh" data-rowid="body-001"></td>
+                            <td><input type="hidden" data-field="anh-chu-ky-phe-duyet-1" data-rowid="body-001"></td>
+                            <td><input type="hidden" data-field="anh-chu-ky-phe-duyet-cuoi" data-rowid="body-001"></td>
+                        </table>
+
+                        <table id="bang-3" data-json="bang-3" class="table" data-send="true">
+                            <tr><td colspan="12"><b>Nhân viên cấp bột ngọt</b></td></tr>
+                            <tr>
+                                <td colspan="1" rowspan="2">Ca 1</td>
+                                <td colspan="3" style="background: rgb(243, 215, 163);">
+                                    <img class="OP" name="anh-chu-ky-van-hanh">
+                                </td>
+
+                                <td colspan="1" rowspan="2">Ca 2</td>
+                                <td colspan="3" style="background: rgb(243, 215, 163);">
+                                    <img class="AP-1" name="anh-chu-ky-phe-duyet-1">
+                                </td>
+
+                                <td colspan="1" rowspan="2">Ca 3</td>
+                                <td colspan="3" style="background: rgb(243, 215, 163);">
+                                    <img class="AP-F" name="anh-chu-ky-phe-duyet-cuoi">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3"><input type="text" data-field="ten-van-hanh" data-rowid="body-002" disabled></td>
+                                <td colspan="3"><input type="text" data-field="ten-phe-duyet-1" data-rowid="body-002" disabled></td>
+                                <td colspan="3"><input type="text" data-field="ten-phe-duyet-cuoi" data-rowid="body-002" disabled></td>
+                            </tr>
+                
+                        </table>
+                    </div>
+
+                    <table id="bang-4" data-json="bang-4" class="table" data-send="true">
+                        <thead id="bang-4-head"></thead>
+                        <tbody id="bang-4-body"></tbody>
+                        <tfoot id="bang-4-foot"></tfoot>
+                    </table>
+                </div>
+
+                <div id="function-div">
+                    <div id="bounding-div">
+                        <div id="comment-div">
+                            <span><b>GHI CHÚ</b></span>
+                            <textarea id="comment"></textarea>
+                        </div>
+                    
+                        <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;gap: 1.5mm;">
+                            <span style="color: rgb(70, 70, 70);font-size: 14px;"><b>HÀNH ĐỘNG</b></span>
+                            <div id="button-div">
+                                <button type="submit" class="draft-btn" id="draft-btn">Lưu tạm dữ liệu</button>
+                                <button type="button" class="pdf-btn" id="pdf-btn" name="landscape">Xuất PDF</button>
+                                <button type="submit" class="send-btn" id="submit-btn" name="SEND">Gửi dữ liệu</button>
+
+                                <button type="submit" class="send-btn" id="approve-btn" name="landscape">Phê duyệt</button>
+                                <button type="submit" class="send-btn" id="reject-btn" name="SEND">Từ chối</button>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div id="message-div">
+                        <p id="error-message"></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="signature-box">
+                <div id="signature-content">
+                    <h><b>Ký tên</b></h>
+                    <canvas id="signature-canvas"></canvas>
+                    <div id="signature-btn">
+                        <button type="button" id="cancel-sign-btn">HỦY</button>
+                        <button type="button" id="delete-sign-btn">XÓA</button>
+                        <button type="button" id="confirm-sign-btn">XÁC NHẬN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading-div">
+                <div id="loading-icon">
+                    <div id="spinner"></div>
+                    <img src="../logo.png">
+                </div>
+                <span id="loading-message">Đang xử lý...</span>
+            </div>
+
+        </form>
+
+        <script type="module" src="../H8-FI001/H8-FI001.js"></script>
+        <script src="../common/common_function.js"></script>
+        <script src="../common/common_display.js"></script>
+        
+    </body>
+</html>

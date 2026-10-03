@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalForm Approval</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="./logo.png">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-left">
+                <img src="./logo.png">
+                <span><b>H8 DIGITAL FORM</b></span>
+            </div>
+
+            <div id="header-right">
+                <span id="username">LÊ ĐỨC CHƯƠNG</span>
+                <div style="display: flex; flex-direction:row; gap:5px">
+                    <button id="changing-password-btn">ĐỔI MẬT KHẨU</button>
+                    <button id="logout-btn">ĐĂNG XUẤT</button>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div id="history">
+            <h><b>FORM CẦN PHÊ DUYỆT</b></h>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>MÃ FORM</th>
+                        <th>NGÀY NHẬP DỮ LIỆU</th>
+                        <th>CA NHẬP LIỆU</th>
+                        <th>TRẠNG THÁI</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <tr><td colspan="4">KHÔNG CÓ DỮ LIỆU</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

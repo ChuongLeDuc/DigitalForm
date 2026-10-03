@@ -1,0 +1,452 @@
+body{
+    background: rgb(220 220 220);
+    width: 100%;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.page{
+    width:300mm;
+    min-width: 220mm;
+    background: white;
+    margin: 3px auto;
+    padding-left: 3mm;
+    padding-right: 3mm;
+    padding-top: 3mm;
+}
+
+#header,#function-div{
+    display: flex;
+    flex-direction: row;
+    width: 300mm;
+    background: white;
+    margin: 5px auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0, 0.08) ;
+    padding-left: 3mm;
+    padding-right: 3mm;
+    padding-top: 3mm;
+    padding-bottom: 3mm;
+}
+
+#header-left{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    gap:2px
+}
+#header-left img{
+    height: 65px;
+    background: rgb(224, 213, 213);
+    border-radius: 15px;
+}
+#header-left span{
+    color: rgb(43, 43, 184);
+    font-size: 25px;
+}
+
+#header-center{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bolder;
+    gap:1.5mm
+}
+#header-formcode{
+    font-size: 22px;
+    color: #3232d6;
+}
+#form-status{
+    font-size: 20px;
+    color: green;
+}
+
+#header-right{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    align-items: flex-end;
+    gap:5px;
+    justify-content: right;
+}
+
+#username{
+    font-size: 20px;
+    font-weight: bolder;
+    color:rgb(51, 51, 51);
+}
+#logout-btn, #changing-password-btn{
+    height: 40px;
+    width: 120px;
+    background: rgb(161, 213, 245);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    color:rgb(73, 75, 191)
+}
+
+/* =====================================================
+   FUNCTION
+===================================================== */
+
+#function-div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4mm;
+
+    background: white;
+
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   BOUNDING
+===================================================== */
+
+#bounding-div {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8mm;
+    width: 100%;
+
+    align-items: stretch;
+}
+
+
+/* =====================================================
+   COMMENT
+===================================================== */
+
+#comment-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5mm;
+    align-items: flex-start;
+    justify-content: center;
+    width: 75%;
+}
+
+#comment-div span {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+    padding-left: 2px;
+}
+
+#comment {
+    width: 100%;
+    min-height: 3cm;
+    padding: 3mm;
+    box-sizing: border-box;
+    resize: none;
+    font-family: 'Gill Sans', 'Gill Sans MT',
+                 Calibri, 'Trebuchet MS', sans-serif;
+
+    font-size: 16px;
+    color: rgb(50, 50, 50);
+    background: rgb(248, 249, 250);
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+#comment:focus {
+    background: white;
+    border-color: rgb(70, 110, 190);
+    box-shadow: 0 0 0 2px rgba(70, 110, 190, 0.10);
+}
+
+
+/* =====================================================
+   BUTTON AREA
+===================================================== */
+
+#button-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.5mm;
+    align-items: center;
+    justify-content: center;
+    padding: 1mm;
+}
+
+
+/* =====================================================
+   COMMON BUTTON
+===================================================== */
+
+#button-div button {
+    min-width: 30mm;
+    min-height: 15mm;
+    padding: 2mm 4mm;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        filter 0.15s ease;
+}
+
+#button-div button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.15);
+}
+
+#button-div button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   BUTTON COLORS
+===================================================== */
+
+/* Lưu tạm */
+.draft-btn {
+    background: rgb(239, 130, 130);
+    color: white;
+}
+
+/* PDF */
+.pdf-btn {
+    background: rgb(70, 170, 85);
+    color: white;
+}
+
+/* Excel */
+.excel-btn {
+    background: rgb(105, 75, 160);
+    color: white;
+}
+
+
+/* Gửi */
+.send-btn {
+    background: rgb(35, 145, 165);
+    color: white;
+}
+
+
+/* =====================================================
+   HOVER COLORS
+===================================================== */
+
+.draft-btn:hover {
+    background: rgb(220, 105, 105);
+}
+
+.pdf-btn:hover {
+    background: rgb(55, 145, 70);
+}
+
+.excel-btn:hover {
+    background: rgb(85, 55, 140);
+}
+
+.send-btn:hover {
+    background: rgb(20, 120, 140);
+}
+
+select{
+    width: 100%;
+    height: 100%;
+    border: none;
+    appearance: none;
+    font-size: 6px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#signature-box{
+    display: none;
+    background: rgba(216, 216, 216, 0.8);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+}
+
+#signature-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 20px;
+    gap:15px;
+    border-radius: 10px;
+}
+#signature-canvas{
+    width: 300px;
+    height: 200px;
+    background: rgb(122, 226, 122);
+    border-radius: 5px;
+    touch-action: none;
+}
+#signature-btn{
+    display: flex;
+    flex-direction: row;
+    gap: 5mm;
+}
+
+#signature-btn button{
+    width: 80px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: rgb(59, 59, 59);
+    border: none;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+#signature-btn button:hover{
+    transform: translateY(-2px);
+}
+
+#cancel-sign-btn{
+    background: rgb(89, 189, 239);
+}
+#delete-sign-btn{
+    background: rgb(230, 163, 163);
+}
+#confirm-sign-btn{
+    background: rgb(104, 239, 104);
+}
+
+#loading-div{
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 9999;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(235, 208, 208, 0.69);
+
+}
+
+#loading-icon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+#loading-icon img{
+    z-index: 9999;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#loading-message{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(68, 68, 68);
+}
+#spinner{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border:15px solid rgb(248, 54, 54);
+    border-top:15px solid rgb(235, 236, 233);
+    border-radius: 50%;
+    animation: spin 0.5s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+select option{
+    background: rgb(237, 244, 194);
+}
+
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: white !important;
+    }
+
+    /* Ẩn toàn bộ */
+    body * {
+        visibility: hidden !important;
+    }
+
+    /* Chỉ hiện page */
+    .page, .page * {
+        visibility: visible !important;
+    }
+
+    /* Đưa page lên góc trái trang in */
+    .page {
+        position: absolute;
+
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: white !important;
+        overflow: visible !important;
+    }
+
+    /* Không in các nút/function nếu nằm trong page */
+    .function-div {
+        display: none !important;
+    }
+
+    /* Giữ màu khi in */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

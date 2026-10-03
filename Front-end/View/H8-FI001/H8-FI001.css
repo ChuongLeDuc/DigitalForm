@@ -1,0 +1,172 @@
+
+
+#table-1-2-3-container{
+    display: flex;
+    margin: 5px auto;
+    height: 35mm;
+    margin-bottom: 5px;
+    align-items: center;
+}
+#table-1-2-container{
+    width: 25%;
+}
+
+.sign-img,.OP,.AP-1,.AP-2,.AP-F{
+    height: 20mm;
+    width: 100%;
+}
+
+#bang-1 {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 0mm;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#bang-1 tr td {
+    border: none;
+    height: 5mm;
+    padding: 0;
+}
+
+#bang-2 {
+    width: 100%;
+    height: 50%;
+    font-size: 12px;
+    text-align: left;
+    border-collapse: collapse;
+    margin-left:0px;
+    margin-top:5px;
+}
+
+#bang-2 tr td {
+    border: 0px solid black;
+    height: 3mm;
+    width: 15mm;
+}
+
+#bang-2 tr td input {
+    width: 70%;
+    height: 6mm;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+.color-2-1{
+    background: #e0ffc6;
+}
+.color-2-2{
+    background: #95fff6;
+}
+
+#image-review{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.review-img{
+    height: 25mm;
+    width: 25mm;
+    object-fit:fill;
+    border: 1px solid black;
+    background: rgb(201, 255, 201);
+}
+
+#bang-3 {
+    width: 35%;
+    font-size: 12px;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#bang-3 tr td {
+    border: 1px solid black;
+    height: 5mm;
+    padding: 0;
+}
+
+#bang-3 tr td input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0px solid black;
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-size: 13px;
+    text-align: center;
+    color: black;
+    text-align: center;
+}
+
+#bang-4 {
+    width: 100%;
+    font-size: 6px;
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 10px auto;
+}
+
+#bang-4 tr td {
+    border: 1px solid black;
+    height: 3mm;
+    padding: 0;
+}
+
+#bang-4 tr td input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0px solid black;
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-size: 6px;
+    color: black;
+    text-align: center;
+}
+
+.color-4-1{
+    background: rgb(233, 176, 84);
+    font-weight: bolder;
+}
+.color-4-2{
+    background: rgb(203, 242, 173);
+}
+.color-4-3{
+    background: rgb(236, 252, 201);
+}
+.color-4-4{
+    background: rgb(160, 247, 158);
+}
+.color-4-5{
+    background: #e7c6ff;
+    font-weight: bold;
+}
+.color-4-6{
+    background: rgb(252, 132, 109);
+}
+.color-4-7{
+    background: rgb(199, 201, 255);
+}
+.color-4-8{
+    background: rgb(145, 247, 143);
+}
+.color-4-9{
+    background: rgb(225, 164, 245);
+}
+
+
